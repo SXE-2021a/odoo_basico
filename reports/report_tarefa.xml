@@ -1,8 +1,5 @@
-
-<!-- Este report é para engadir no modulo project. Para poder listar as tarefas (tasks)--> 
-
 <odoo>
-    <record id="paperformat_euro_landscape" model="report.paperformat">
+    <record model="report.paperformat" id="paperformat_euro_landscape" >
         <field name="name">European A4 Landscape</field>
         <field name="default" eval="True" />
         <field name="format">A4</field>
@@ -18,6 +15,46 @@
         <field name="dpi">90</field>
     </record>
 
+   <record model="ir.filters" id="tarefasRematadas">
+      <field name="name">Tarefas Rematadas</field>
+      <field name="model_id">project.task</field>
+      <field name="is_default">true</field>
+      <field name="active">true</field>
+      <field name="sort">["project_id"]</field>
+      <field name="domain">[('stage_id', '=','Rematada')]</field><!-- Aquí iría o filtro Tarefa Rematada-->
+      <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios -->
+      <field name="action_id" eval="ref('project.action_view_task')"/><!-- Obtemos o id a partir do id externo-->
+    </record>
+ <record model="ir.filters" id="tarefasAsignadas">
+      <field name="name">Tarefas Asignadas</field>
+      <field name="model_id">project.task</field>
+      <field name="is_default">false</field>
+      <field name="active">true</field>
+      <field name="sort">["project_id"]</field>
+      <field name="domain">[('stage_id', '=','Asignada')]</field><!-- Aquí iría o filtro Tarefa Rematada-->
+      <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios -->
+      <field name="action_id" eval="ref('project.action_view_task')"/><!-- Obtemos o id a partir do id externo-->
+    </record>
+     <record model="ir.filters" id="tarefasEnProceso">
+      <field name="name">Tarefas En Proceso</field>
+      <field name="model_id">project.task</field>
+      <field name="is_default">false</field>
+      <field name="active">true</field>
+      <field name="sort">["project_id"]</field>
+      <field name="domain">[('stage_id', '=','En Proceso')]</field><!-- Aquí iría o filtro Tarefa Rematada-->
+      <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios -->
+      <field name="action_id" eval="ref('project.action_view_task')"/><!-- Obtemos o id a partir do id externo-->
+    </record>
+         <record model="ir.filters" id="tarefasRenuncia">
+      <field name="name">Tarefas Renuncia</field>
+      <field name="model_id">project.task</field>
+      <field name="is_default">false</field>
+      <field name="active">true</field>
+      <field name="sort">["project_id"]</field>
+      <field name="domain">[('stage_id', '=','Renuncia')]</field><!-- Aquí iría o filtro Tarefa Rematada-->
+      <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios -->
+      <field name="action_id" eval="ref('project.action_view_task')"/><!-- Obtemos o id a partir do id externo-->
+    </record>
     <report id="action_report_tarefa"
             string="Listaxe das tarefas"
             model="project.task" report_type="qweb-pdf"
@@ -52,4 +89,6 @@
             </t>
         </t>
     </template>
+    
+   
 </odoo>
