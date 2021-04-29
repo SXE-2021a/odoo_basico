@@ -2,7 +2,7 @@
     <data>
         <!--    <data noupdate="1">
     Only loaded when installing the module (odoo-bin -i module) -->
-        <record model="odoo_basico.informacion" id="odoo_basico informacion 1">
+        <record model="odoo_basico.informacion" id="odoo_basicoinformacion1">
             <field name="name">Rexistro 1</field>
             <field name="descripcion">Descripción Rexistro 1</field>
             <field name="autorizado">True</field>
@@ -12,7 +12,7 @@
             <field name="ancho_en_cms">1</field>
             <field name="peso">1</field>
         </record>
-        <record model="odoo_basico.informacion" id="odoo_basico informacion 2">
+        <record model="odoo_basico.informacion" id="odoo_basicoinformacion2">
             <field name="name">Rexistro 2</field>
             <field name="descripcion">Descripción Rexistro 2</field>
             <field name="autorizado">True</field>
@@ -22,7 +22,7 @@
             <field name="ancho_en_cms">2</field>
             <field name="peso">2</field>
         </record>
-        <record model="odoo_basico.informacion" id="odoo_basico informacion 3">
+        <record model="odoo_basico.informacion" id="odoo_basicoinformacion3">
             <field name="name">Rexistro 3</field>
             <field name="descripcion">Descripción Rexistro 3</field>
             <field name="autorizado">True</field>
@@ -32,7 +32,7 @@
             <field name="ancho_en_cms">3</field>
             <field name="peso">3</field>
         </record>
-        <record model="odoo_basico.informacion" id="odoo_basico informacion 4">
+        <record model="odoo_basico.informacion" id="odoo_basicoinformacion4">
             <field name="name">Rexistro 4</field>
             <field name="descripcion">Descripción Rexistro 4</field>
             <field name="autorizado">True</field>
@@ -42,7 +42,7 @@
             <field name="ancho_en_cms">4</field>
             <field name="peso">4</field>
         </record>
-        <record model="odoo_basico.informacion" id="odoo_basico informacion 5">
+        <record model="odoo_basico.informacion" id="odoo_basicoinformacion5">
             <field name="name">Rexistro 5</field>
             <field name="descripcion">Descripción Rexistro 5</field>
             <field name="autorizado">False</field>
@@ -52,7 +52,7 @@
             <field name="ancho_en_cms">4</field>
             <field name="peso">4</field>
         </record>
-        <record model="odoo_basico.informacion" id="odoo_basico informacion 6">
+        <record model="odoo_basico.informacion" id="odoo_basicoinformacion6">
             <field name="name">Rexistro 6</field>
             <field name="descripcion">Descripción Rexistro 6</field>
             <field name="autorizado">False</field>
@@ -62,7 +62,7 @@
             <field name="ancho_en_cms">4</field>
             <field name="peso">4</field>
         </record>
-        <record model="res.partner" id="partner persoa">
+        <record model="res.partner" id="partnerpersoa">
             <field name="name">Nome Persoa</field>
             <field name="apelidos">Apelidos Persoa</field>
             <field name="visible">true</field>

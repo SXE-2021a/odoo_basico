@@ -10,7 +10,7 @@ class informacion(models.Model):
      _name = 'odoo_basico.informacion' # Será o nome da táboa
      _description = ' Tipos de datos básicos'
      _order = "descripcion desc"
-     _sql_constraints = [('nome unico', 'unique(name)', 'Non se pode repetir o nome')]
+     _sql_constraints = [('nome_unico', 'unique(name)', 'Non se pode repetir o nome')]
 
      name = fields.Char(string="Titulo",required=True,size=20)
      descripcion = fields.Text(string="A Descripción")
