@@ -1,0 +1,43 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="informacion_list_action">
+            <field name="name">A acción de odoo basico</field>
+            <field name="res_model">odoo_basico.informacion</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">Tes que crear o primeiro rexistro</p>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="informacion_form_view">
+            <field name="name">odoo_basico.form</field>
+            <field name="model">odoo_basico.informacion</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="descripcion"/>
+                            <field name="alto_en_cms"/>
+                            <field name="ancho_en_cms"/>
+                            <field name="longo_en_cms"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="informacion_list_view">
+            <field name="name">odoo_basico.list</field>
+            <field name="model">odoo_basico.informacion</field>
+            <field name="arch" type="xml">
+                <list>
+                    <field name="name"/>
+                    <field name="descripcion"/>
+                    <field name="alto_en_cms"/>
+                    <field name="ancho_en_cms"/>
+                    <field name="longo_en_cms"/>
+                </list>
+            </field>
+        </record>
+    </data>
+</odoo>
