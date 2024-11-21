@@ -1,24 +1,78 @@
 <odoo>
     <data>
-<!--
-        <template id="listing">
-          <ul>
-            <li t-foreach="objects" t-as="object">
-              <a t-attf-href="#{ root }/objects/#{ object.id }">
-                <t t-esc="object.display_name"/>
-              </a>
-            </li>
-          </ul>
-        </template>
-        <template id="object">
-          <h1><t t-esc="object.display_name"/></h1>
-          <dl>
-            <t t-foreach="object._fields" t-as="field">
-              <dt><t t-esc="field"/></dt>
-              <dd><t t-esc="object[field]"/></dd>
-            </t>
-          </dl>
-        </template>
--->
+        <record model="odoo_basico.informacion" id="odoo_basicoinformacion1">
+            <field name="name">Rexistro 1</field>
+            <field name="descripcion">Descripción Rexistro 1</field>
+            <field name="autorizado">True</field>
+            <field name="sexo_traducido">Hombre</field>
+            <field name="alto_en_cms">1</field>
+            <field name="longo_en_cms">1</field>
+            <field name="ancho_en_cms">1</field>
+            <field name="peso">1</field>
+        </record>
+        <record model="odoo_basico.informacion" id="odoo_basicoinformacion2">
+            <field name="name">Rexistro 2</field>
+            <field name="descripcion">Descripción Rexistro 2</field>
+            <field name="autorizado">True</field>
+            <field name="sexo_traducido">Hombre</field>
+            <field name="alto_en_cms">2</field>
+            <field name="longo_en_cms">2</field>
+            <field name="ancho_en_cms">2</field>
+            <field name="peso">2</field>
+        </record>
+        <record model="odoo_basico.informacion" id="odoo_basicoinformacion3">
+            <field name="name">Rexistro 3</field>
+            <field name="descripcion">Descripción Rexistro 3</field>
+            <field name="autorizado">True</field>
+            <field name="sexo_traducido">Hombre</field>
+            <field name="alto_en_cms">3</field>
+            <field name="longo_en_cms">3</field>
+            <field name="ancho_en_cms">3</field>
+            <field name="peso">3</field>
+        </record>
+        <record model="odoo_basico.informacion" id="odoo_basicoinformacion4">
+            <field name="name">Rexistro 4</field>
+            <field name="descripcion">Descripción Rexistro 4</field>
+            <field name="autorizado">True</field>
+            <field name="sexo_traducido">Mujer</field>
+            <field name="alto_en_cms">4</field>
+            <field name="longo_en_cms">4</field>
+            <field name="ancho_en_cms">4</field>
+            <field name="peso">4</field>
+        </record>
+        <record model="odoo_basico.informacion" id="odoo_basicoinformacion5">
+            <field name="name">Rexistro 5</field>
+            <field name="descripcion">Descripción Rexistro 5</field>
+            <field name="autorizado">False</field>
+            <field name="sexo_traducido">Mujer</field>
+            <field name="alto_en_cms">4</field>
+            <field name="longo_en_cms">4</field>
+            <field name="ancho_en_cms">4</field>
+            <field name="peso">4</field>
+        </record>
+        <record model="odoo_basico.informacion" id="odoo_basicoinformacion6">
+            <field name="name">Rexistro 6</field>
+            <field name="descripcion">Descripción Rexistro 6</field>
+            <field name="autorizado">False</field>
+            <field name="sexo_traducido">Mujer</field>
+            <field name="alto_en_cms">4</field>
+            <field name="longo_en_cms">4</field>
+            <field name="ancho_en_cms">4</field>
+            <field name="peso">4</field>
+        </record>
+    </data>
+    <data>
+        <record model="odoo_basico.informacion" id="odoo_basicoinformacion1">
+            <field name="name">Rexistro 1</field>
+            <field name="descripcion">Descripción Rexistro 1</field>
+            <field name="autorizado">True</field>
+            <field name="sexo_traducido">Hombre</field>
+            <field name="alto_en_cms">1</field>
+            <field name="longo_en_cms">1</field>
+            <field name="ancho_en_cms">10</field>
+            <field name="peso">1</field>
+        </record>
+
+
     </data>
 </odoo>
