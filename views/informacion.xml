@@ -27,10 +27,16 @@
                             </page>
                             <page string="Datos Numéricos">
                                 <group>
-                                    <field name="alto_en_cms"/>
-                                    <field name="ancho_en_cms"/>
-                                    <field name="longo_en_cms"/>
-                                    <field name="peso"/>
+                                    <group>
+                                        <field name="alto_en_cms"/>
+                                        <field name="ancho_en_cms"/>
+                                        <field name="longo_en_cms"/>
+                                        <field name="literal" readonly="1"/>
+                                    </group>
+                                    <group>
+                                        <field name="volume"/>
+                                        <field name="peso"/>
+                                    </group>
                                 </group>
                             </page>
                             <page string="Datos ">
@@ -55,6 +61,7 @@
                     <field name="alto_en_cms"/>
                     <field name="ancho_en_cms"/>
                     <field name="longo_en_cms"/>
+                    <field name="volume"/>
                     <field name="peso"/>
                 </list>
             </field>
@@ -80,7 +87,8 @@
             <field name="is_default">false</field>
             <field name="active">true</field>
             <field name="sort">[]</field>
-            <field name="domain">['|','&amp;',('autorizado', '=', False),('sexo_traducido', '=', 'Mujer'),('name','=','Rexistro 3' )]
+            <field name="domain">['|','&amp;',('autorizado', '=', False),('sexo_traducido', '=',
+                'Mujer'),('name','=','Rexistro 3' )]
             </field><!-- Aquí iría o filtro -->
             <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios -->
             <field name="action_id"
