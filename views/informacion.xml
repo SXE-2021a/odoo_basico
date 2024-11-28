@@ -40,6 +40,14 @@
                                     </group>
                                 </group>
                             </page>
+                            <page string="Binary">
+                                <group>
+                                    <field name="foto" widget="image" class="oe_avatar"/>
+                                    <field name="foto" widget="image"/>
+                                    <field name="adxunto_nome" invisible="1"/>
+                                    <field name="adxunto" filename="adxunto_nome"/>
+                                </group>
+                            </page>
                             <page string="Datos ">
                                 <group>
                                 </group>

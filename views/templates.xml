@@ -62,16 +62,16 @@
         </record>
     </data>
 
-    <data>
-        <record model="odoo_basico.informacion" id="odoo_basicoinformacion7">
-            <field name="name">Rexistro 7</field>
-            <field name="descripcion">Descripción Rexistro 1</field>
-            <field name="autorizado">True</field>
-            <field name="sexo_traducido">Hombre</field>
-            <field name="alto_en_cms">7</field>
-            <field name="longo_en_cms">7</field>
-            <field name="ancho_en_cms">10</field>
-            <field name="peso">1</field>
-        </record>
-    </data>
+<!--    <data>-->
+<!--        <record model="odoo_basico.informacion" id="odoo_basicoinformacion7">-->
+<!--            <field name="name">Rexistro 7</field>-->
+<!--            <field name="descripcion">Descripción Rexistro 1</field>-->
+<!--            <field name="autorizado">True</field>-->
+<!--            <field name="sexo_traducido">Hombre</field>-->
+<!--            <field name="alto_en_cms">7</field>-->
+<!--            <field name="longo_en_cms">7</field>-->
+<!--            <field name="ancho_en_cms">10</field>-->
+<!--            <field name="peso">1</field>-->
+<!--        </record>-->
+<!--    </data>-->
 </odoo>

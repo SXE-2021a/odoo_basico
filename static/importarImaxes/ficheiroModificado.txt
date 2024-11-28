@@ -1,0 +1,4 @@
+"odoo_basico.odoo_basicoinformacion5"|Convenio-Europeo-del-Paisaje.jpg
+"odoo_basico.odoo_basicoinformacion4"|eduXunta.png
+"odoo_basico.odoo_basicoinformacion3"|iesTeis.png
+"odoo_basico.odoo_basicoinformacion2"|odooHero.jpg
