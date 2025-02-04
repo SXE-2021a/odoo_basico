@@ -59,6 +59,7 @@
                                     <group>
                                         <field name="moeda_id"/>
                                         <field name="moeda_en_texto"/>
+                                        <field name="creador_da_moeda"/>
                                     </group>
                                 </group>
                             </page>

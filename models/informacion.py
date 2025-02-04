@@ -29,6 +29,7 @@ class informacion(models.Model):
     moeda_en_texto = fields.Char(related="moeda_id.currency_unit_label",string="Moeda en formato texto")
     moeda_euro_id = fields.Many2one('res.currency',
                                     default=lambda self: self.env['res.currency'].search([('name', '=', "EUR")],limit=1))
+    creador_da_moeda = fields.Char(related="moeda_id.create_uid.login",string="Usuario creador da moeda", store=True)
     gasto_en_euros=fields.Monetary("Gasto en Euros",'moeda_euro_id')
     moeda_dolar_id = fields.Many2one('res.currency',
                                     default=lambda self: self.env['res.currency'].search([('name', '=', "USD")],
@@ -63,3 +64,6 @@ class informacion(models.Model):
         for rexistro in self:
             if rexistro.peso < 1 or rexistro.peso > 4:
                 raise ValidationError('Os peso de %s ten que ser entre 1 e 4 ' % rexistro.name)
+
+    def _cambia_campo_sexo(self, rexistro):
+        rexistro.sexo_traducido = "Hombre"
