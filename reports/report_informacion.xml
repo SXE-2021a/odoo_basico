@@ -1,7 +1,8 @@
 <odoo>
+    <data></data>
     <record id="paperformat_euro_portrait" model="report.paperformat">
         <field name="name">European A4 Portrait</field>
-        <field name="default" eval="True"/>
+        <field name="default" eval="True" />
         <field name="format">A4</field>
         <field name="page_height">0</field>
         <field name="page_width">0</field>
@@ -10,13 +11,14 @@
         <field name="margin_bottom">23</field>
         <field name="margin_left">15</field>
         <field name="margin_right">15</field>
-        <field name="header_line" eval="True"/>
+        <field name="header_line" eval="True" />
         <field name="header_spacing">35</field>
         <field name="dpi">90</field>
     </record>
+
     <record id="paperformat_euro_landscape" model="report.paperformat">
         <field name="name">European A4 Landscape</field>
-        <field name="default" eval="True"/>
+        <field name="default" eval="True" />
         <field name="format">A4</field>
         <field name="page_height">0</field>
         <field name="page_width">0</field>
@@ -25,23 +27,39 @@
         <field name="margin_bottom">23</field>
         <field name="margin_left">7</field>
         <field name="margin_right">7</field>
-        <field name="header_line" eval="True"/>
+        <field name="header_line" eval="True" />
         <field name="header_spacing">35</field>
         <field name="dpi">90</field>
     </record>
 
+<!--    <report id="action_report_informacion"-->
+<!--            string="Listaxe de Información"-->
+<!--            model="odoo_basico.informacion" report_type="qweb-pdf"-->
+<!--            name="odoo_basico.report_informacion_template"-->
+<!--            paperformat="paperformat_euro_portrait"/>-->
 
-    <report id="action_report_informacion"
-            string="Listaxe de Información"
-            model="odoo_basico.informacion" report_type="qweb-pdf"
-            name="odoo_basico.report_informacion_template"
-            paperformat="paperformat_euro_portrait"
-    />
+<!--https://www.odoo.com/documentation/18.0/es/developer/tutorials/pdf_reports.html-->
+
+<!--https://github.com/odoo/odoo/blob/0e12fa135882cd5095dbf15fe2f64231c6a84336/addons/event/report/event_event_reports.xml#L20-L30-->
+
+ <record id="report_1_odoo_basico_informacion" model="ir.actions.report">
+        <field name="name">Listaxe 1 de Información</field>
+        <field name="model">odoo_basico.informacion</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo_basico.report_informacion_template</field>
+        <field name="report_file">odoo_basico.report_informacion_template</field>
+<!--        <field name="print_report_name">'Registration Event - %s' % (object.name or 'Attendee').replace('/','')</field>-->
+        <field name="paperformat_id" ref="paperformat_euro_portrait"/>
+        <field name="binding_model_id" ref="model_odoo_basico_informacion"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
 
     <template id="report_informacion_template">
         <t t-call="web.html_container">
             <t t-call="web.external_layout">
-                  <div class="page">
+                <div class="page">
                     <div class="container">
                         <table class="table table-sm">
                             <thead>
@@ -89,5 +107,6 @@
             </t>
         </t>
     </template>
+
 
 </odoo>
