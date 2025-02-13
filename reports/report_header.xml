@@ -1,0 +1,21 @@
+<odoo>
+    <template id="report_header" inherit_id="web.external_layout_standard">
+        <xpath expr="//div[@name='company_address']" position="replace">
+            <span t-field="company.partner_id.name"/>
+            <span>,</span>
+            <span t-field="company.partner_id.street"/>
+            <span>,</span>
+            <span t-field="company.partner_id.street2"/>
+            <span>,</span>
+            <span t-field="company.partner_id.city"/>
+            <span>,</span>
+            <span t-field="company.partner_id.state_id"/>
+            <span>,</span>
+            <span t-field="company.partner_id.country_id"/>
+            <span>,</span>
+            <span>email:</span>
+            <span t-field="company.partner_id.email"/>
+            <span t-field="company.partner_id.website"/>
+        </xpath>
+    </template>
+</odoo>
