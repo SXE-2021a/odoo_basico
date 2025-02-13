@@ -69,7 +69,7 @@ class informacion(models.Model):
         rexistro.sexo_traducido = "Hombre"
 
     def envio_email(self):
-        meu_usuario = self.env.user
+        meu_usuario =  self.env.user
         # mail_de     Odoo pon o email que configuramos en gmail para facer o envio
         mail_reply_to = meu_usuario.partner_id.email  # o enderezo email que ten asociado o noso usuario
         mail_para = 'evanchapela@gmail.com'  # o enderezo email de destino
