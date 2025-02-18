@@ -18,10 +18,11 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','mail'],
+    'depends': ['base','account','mail'],
 
     # always loaded
     'data': [
+        'views/persoa.xml',
         'views/informacion.xml',
         'views/suceso.xml',
         'views/templates.xml',
