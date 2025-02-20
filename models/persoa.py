@@ -41,4 +41,5 @@ class persoa (models.Model):
                resultado = f"{rexistro.apelidos} {rexistro.name}"  # usando f-string en lugar de concatenacion
            else:
                resultado = rexistro.name
+
        return resultado
