@@ -14,9 +14,14 @@
             <field name="arch" type="xml">
                 <form>
                     <header>
-                        <button name="actualizadorSexo" type="object" string="Actualiza o campo Sexo do modelo información"/>
-                        <button name="creaRexistroInformacion" type="object" string="Crea un rexistro no modelo información"/>
-                        <button name="actualizaRexistroInformacion" type="object" string="Actualiza un rexistro xa creado do modelo información"/>
+                        <button name="actualizadorSexo" type="object"
+                                string="Actualiza o campo Sexo do modelo información"/>
+                        <button name="creaRexistroInformacion" type="object"
+                                string="Crea un rexistro no modelo información"/>
+                        <button name="actualizaRexistroInformacion" type="object"
+                                string="Actualiza un rexistro xa creado do modelo información"/>
+                        <button name="actualizadorHoraTimezone" type="object"
+                                string="Actualiza Hora Timezone do Usuario en todos os rexistros do modelo información"/>
 
 
                     </header>

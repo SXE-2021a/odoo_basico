@@ -13,9 +13,14 @@
             <field name="model">odoo_basico.informacion</field>
             <field name="arch" type="xml">
                 <form>
-                     <header>
+                    <header>
                         <button name="envio_email" type="object" string="Enviar Email"/>
-                     </header>
+                        <button name="ver_contexto" type="object" string="Ver Contexto"/>
+                        <button name="actualiza_hora_timezone_usuario" type="object"
+                                string="Actualiza Hora a Timezone do Usuario" class="oe_highlight"/>
+
+
+                    </header>
                     <sheet>
                         <group>
                             <field name="name"/>
@@ -51,6 +56,21 @@
                                     <field name="adxunto" filename="adxunto_nome"/>
                                 </group>
                             </page>
+                            <page string="Datas">
+                                <group>
+                                    <group>
+                                        <field name="data"/>
+                                        <field name="mes_castelan"/>
+                                        <field name="mes_galego"/>
+                                    </group>
+                                    <group>
+                                        <field name="data_hora"/>
+                                        <field name="hora_utc"/>
+                                        <field name="hora_timezone_usuario"/>
+
+                                    </group>
+                                </group>
+                            </page>
                             <page string="Moedas">
                                 <group>
                                     <group>
@@ -79,6 +99,12 @@
                 <list>
                     <field name="name"/>
                     <field name="descripcion"/>
+                    <field name="data"/>
+                    <field name="mes_castelan"/>
+                    <field name="mes_galego"/>
+                    <field name="data_hora"/>
+                    <field name="hora_utc"/>
+                    <field name="hora_timezone_usuario"/>
                     <field name="autorizado"/>
                     <field name="sexo_traducido"/>
                     <field name="alto_en_cms"/>
