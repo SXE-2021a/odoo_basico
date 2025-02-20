@@ -33,13 +33,10 @@ class persoa (models.Model):
    #
 
    # En Odoo 18 sobrescribimos a propiedade display_name
-   @property
-   def display_name(self):
-       resultado = []
-       for rexistro in self:
-           if rexistro.apelidos:
-               resultado = f"{rexistro.apelidos} {rexistro.name}"  # usando f-string en lugar de concatenacion
+   @api.depends('apelidos', 'name')
+   def _compute_display_name(self):
+       for record in self:
+           if record.apelidos:
+               record.display_name = f"{record.apelidos} {record.name}"
            else:
-               resultado = rexistro.name
-
-       return resultado
+               record.display_name = record.name
