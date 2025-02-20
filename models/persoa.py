@@ -10,17 +10,7 @@ class persoa (models.Model):
    apelidos = fields.Char(required=True,size=60,string="Apelidos")
    visible = fields.Boolean(string="¿Visible?", default=False)
 
-   def name_get(self):
-      # sobrescribimos o metodo name_get da clase res.partner
-      # Por defecto o campo display_name é company, name
-      # O metodo name_get actualiza o campo display_name(que é un computed) de res.partner
-      resultado = []
-      for rexistro in self:
-       if rexistro.apelidos:
-           resultado.append((rexistro.id, str(rexistro.apelidos) + " " + str(rexistro.name)))
-       else:
-         resultado.append((rexistro.id, str(rexistro.name)))
-       return resultado
+
 
    # O campo visible serve para visualizar só  os rexistros  que nos interesan domain="[('visible', '=','True')]"
    # Engadimos na relación many2one ou many2many unha condición
@@ -28,3 +18,27 @@ class persoa (models.Model):
    # Temos que dar permisos en ir.model.access.csv para o model res_partner.
    # Engadir a liña:
    # odoo_basico_res_partner,odoo_basico.res_partner,model_res_partner,base.group_user,1,1,1,1
+
+   # def name_get(self):
+   #     # sobrescribimos o metodo name_get da clase res.partner
+   #     # Por defecto o campo display_name é company, name
+   #     # O metodo name_get actualiza o campo display_name(que é un computed) de res.partner
+   #     resultado = []
+   #     for rexistro in self:
+   #         if rexistro.apelidos:
+   #             resultado.append((rexistro.id, str(rexistro.apelidos) + " " + str(rexistro.name)))
+   #         else:
+   #             resultado.append((rexistro.id, str(rexistro.name)))
+   #         return resultado
+   #
+
+   # En Odoo 18 sobrescribimos a propiedade display_name
+   @property
+   def display_name(self):
+       resultado = []
+       for rexistro in self:
+           if rexistro.apelidos:
+               resultado = f"{rexistro.apelidos} {rexistro.name}"  # usando f-string en lugar de concatenacion
+           else:
+               resultado = rexistro.name
+       return resultado

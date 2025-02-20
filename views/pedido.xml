@@ -22,7 +22,7 @@
                     </header>
                     <sheet>
                         <group>
-<!--                            <field name="partner_id"/>-->
+                            <field name="partner_id"/>
                             <field name="descripcionPedido"/>
                             <field name="name"/>
                             <field name="persoa_id"/>
