@@ -60,18 +60,31 @@
             <field name="ancho_en_cms">4</field>
             <field name="peso">4</field>
         </record>
+
+        <record model="res.partner" id="partner_persoa">
+            <field name="name">Nome Persoa</field>
+            <field name="apelidos">Apelidos Persoa</field>
+            <field name="visible">true</field>
+            <field name="display_name">Nome Persoa Apelidos Persoa</field>
+            <field name="email">persoa@iesteis.com</field>
+            <field name="active">true</field>
+            <field name="company_id">1</field>
+            <field name="lang">es_ES</field>
+        </record>
+
     </data>
 
-<!--    <data>-->
-<!--        <record model="odoo_basico.informacion" id="odoo_basicoinformacion7">-->
-<!--            <field name="name">Rexistro 7</field>-->
-<!--            <field name="descripcion">Descripción Rexistro 1</field>-->
-<!--            <field name="autorizado">True</field>-->
-<!--            <field name="sexo_traducido">Hombre</field>-->
-<!--            <field name="alto_en_cms">7</field>-->
-<!--            <field name="longo_en_cms">7</field>-->
-<!--            <field name="ancho_en_cms">10</field>-->
-<!--            <field name="peso">1</field>-->
-<!--        </record>-->
-<!--    </data>-->
+
+    <!--    <data>-->
+    <!--        <record model="odoo_basico.informacion" id="odoo_basicoinformacion7">-->
+    <!--            <field name="name">Rexistro 7</field>-->
+    <!--            <field name="descripcion">Descripción Rexistro 1</field>-->
+    <!--            <field name="autorizado">True</field>-->
+    <!--            <field name="sexo_traducido">Hombre</field>-->
+    <!--            <field name="alto_en_cms">7</field>-->
+    <!--            <field name="longo_en_cms">7</field>-->
+    <!--            <field name="ancho_en_cms">10</field>-->
+    <!--            <field name="peso">1</field>-->
+    <!--        </record>-->
+    <!--    </data>-->
 </odoo>
