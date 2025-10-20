@@ -38,9 +38,11 @@
                         </group>
                         <notebook>
                             <page string="Datos de Texto">
-                                <field name="descripcion"/>
-                                <field name="autorizado"/>
-                                <field name="sexo_traducido"/>
+                                <group>
+                                    <field name="descripcion"/>
+                                    <field name="autorizado"/>
+                                    <field name="sexo_traducido"/>
+                                </group>
                             </page>
                             <page string="Datos Numéricos">
                                 <group>
