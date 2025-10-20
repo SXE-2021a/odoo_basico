@@ -10,12 +10,10 @@ class informacion(models.Model):
 
      name = fields.Char(string="Título:",size=20,required=True)
      descripcion = fields.Text(string="A Descripción:")
-#     value = fields.Integer()
-#     value2 = fields.Float(compute="_value_pc", store=True)
-#     description = fields.Text()
-#
-#     @api.depends('value')
-#     def _value_pc(self):
-#         for record in self:
-#             record.value2 = float(record.value) / 100
+     alto_en_cms = fields.Integer(string="Alto en cms:")
+     ancho_en_cms = fields.Integer(string="Ancho en cms:")
+     longo_en_cms = fields.Integer(string="Longo en cms:")
+     peso = fields.Float(digits=(6,2),default=2.7,string="Peso en Kgs:")
+     autorizado = fields.Boolean(default=False, string="¿Autorizado?:")
+     sexo_traducido = fields.Selection([('Hombre','Home'),('Mujer','Muller'),('Otros','Outros')], string="Sexo:")
 
