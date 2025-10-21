@@ -15,6 +15,7 @@ class informacion(models.Model):
      longo_en_cms = fields.Integer(string="Longo en cms:")
      volume = fields.Float(string="Volume m3:",digits=(6,2),store=True,compute="_volume")
      peso = fields.Float(string="Peso en Kgs:",digits=(6,2),default=2.7)
+     densidade = fields.Float(string="Densidade KG/m3:", digits=(6, 4), store=True, compute="_densidade")
      autorizado = fields.Boolean(default=False, string="¿Autorizado?:")
      sexo_traducido = fields.Selection([('Hombre','Home'),('Mujer','Muller'),('Otros','Outros')], string="Sexo:")
 
@@ -22,3 +23,11 @@ class informacion(models.Model):
      def _volume(self):
          for rexistro in self:
              rexistro.volume = (float(rexistro.alto_en_cms) * float(rexistro.ancho_en_cms) * float(rexistro.longo_en_cms)) /1000000
+
+     @api.depends('peso', 'volume')
+     def _densidade(self):
+        for rexistro in self:
+            if rexistro.volume != 0:
+                rexistro.densidade = float(rexistro.peso) / float(rexistro.volume)
+            else:
+                rexistro.densidade = 0

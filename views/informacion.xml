@@ -21,6 +21,7 @@
                     <field name="longo_en_cms"/>
                     <field name="volume"/>
                     <field name="peso"/>
+                    <field name="densidade"/>
                     <field name="autorizado"/>
                     <field name="sexo_traducido"/>
                 </list>
@@ -47,13 +48,16 @@
                             </page>
                             <page string="Datos Numéricos">
                                 <group>
-                                    <field name="alto_en_cms"/>
-                                    <field name="ancho_en_cms"/>
-                                    <field name="longo_en_cms"/>
-                                </group>
-                                <group>
-                                    <field name="volume"/>
-                                    <field name="peso"/>
+                                    <group>
+                                        <field name="alto_en_cms"/>
+                                        <field name="ancho_en_cms"/>
+                                        <field name="longo_en_cms"/>
+                                    </group>
+                                    <group>
+                                        <field name="peso"/>
+                                        <field name="volume"/>
+                                        <field name="densidade"/>
+                                    </group>
                                 </group>
                             </page>
                             <page string="Datos">
