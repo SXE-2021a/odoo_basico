@@ -1,0 +1,25 @@
+<odoo>
+    <data>
+        <record model="ir.actions.act_window" id="suceso_list_action">
+            <field name="name">modulo odoo_basico, modelo suceso</field>
+            <field name="res_model">odoo_basico.suceso</field>
+            <field name="view_mode">list</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face"> Tes que crear o 1º Rexistro </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="suceso_list_view">
+            <field name="name">suceso.list</field>
+            <field name="model">odoo_basico.suceso</field>
+            <field name="arch" type="xml">
+                <list string="suceso List" editable ="top" decoration-success="nivel == 'Baixo'" decoration-warning="nivel == 'Medio'" decoration-danger="nivel == 'Alto'">
+                    <field name="name"/>
+                    <field name="descripcion"/>
+                    <field name="nivel"/>
+                    <field name="data_hora"/>
+                </list>
+            </field>
+        </record>
+    </data>
+</odoo>

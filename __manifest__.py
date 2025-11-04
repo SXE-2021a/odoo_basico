@@ -23,6 +23,7 @@ Long description of module's purpose
     # always loaded
     'data': [
         'views/informacion.xml',
+        'views/suceso.xml',
         'views/menu.xml',
         'views/templates.xml',
         'security/ir.model.access.csv',
