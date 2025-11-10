@@ -18,6 +18,9 @@ class informacion(models.Model):
      densidade = fields.Float(string="Densidade KG/m3:", digits=(6, 4), store=True, compute="_densidade")
      autorizado = fields.Boolean(default=False, string="¿Autorizado?:")
      sexo_traducido = fields.Selection([('Hombre','Home'),('Mujer','Muller'),('Otros','Outros')], string="Sexo:")
+     foto = fields.Binary(string='Foto')
+     adxunto_nome = fields.Char(string="Nome Adxunto")
+     adxunto = fields.Binary(string="Arquivo adxunto")
 
      @api.depends ('alto_en_cms','ancho_en_cms','longo_en_cms')
      def _volume(self):

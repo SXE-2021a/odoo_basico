@@ -5,7 +5,7 @@
             <field name="res_model">odoo_basico.informacion</field>
             <field name="view_mode">list,form</field>
             <field name="help" type="html">
-                <p class="o_view_nocontent_smiling_face"> Tes que crear o 1º Rexistro </p>
+                <p class="o_view_nocontent_smiling_face">Tes que crear o 1º Rexistro</p>
             </field>
         </record>
 
@@ -13,7 +13,7 @@
             <field name="name">odoo_basico.list</field>
             <field name="model">odoo_basico.informacion</field>
             <field name="arch" type="xml">
-                <list >
+                <list>
                     <field name="name"/>
                     <field name="descripcion"/>
                     <field name="alto_en_cms"/>
@@ -60,7 +60,17 @@
                                     </group>
                                 </group>
                             </page>
-                            <page string="Datos">
+                            <page string="Datos Binary">
+                                <group>
+                                    <group>
+                                        <field name="foto" widget="image" class="oe_avatar"/>
+                                        <field name="foto" widget="image"/>
+                                    </group>
+                                    <group>
+                                        <field name="adxunto_nome" invisible="1"/>
+                                        <field name="adxunto" filename="adxunto_nome"/>
+                                    </group>
+                                </group>
                             </page>
                             <page string="Datos">
                             </page>
@@ -80,7 +90,8 @@
             <field name="sort">[]</field>
             <field name="domain">[]</field><!-- Aquí iría o filtro -->
             <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios -->
-            <field name="action_id" eval="ref('odoo_basico.informacion_list_action')"/><!-- Obtemos o id a partir do id externo-->
+            <field name="action_id"
+                   eval="ref('odoo_basico.informacion_list_action')"/><!-- Obtemos o id a partir do id externo-->
         </record>
         <record model="ir.filters" id="filtro2">
             <field name="name">Filtro informacion 2</field>
@@ -89,9 +100,12 @@
             <field name="is_default">false</field>
             <field name="active">true</field>
             <field name="sort">[]</field>
-            <field name="domain">['|','&amp;',('autorizado', '=', False),('sexo_traducido', '=', 'Mujer'),('name', '=','Rexistro 3' )]</field><!-- Aquí iría o filtro -->
+            <field name="domain">['|','&amp;',('autorizado', '=', False),('sexo_traducido', '=', 'Mujer'),('name',
+                '=','Rexistro 3' )]
+            </field><!-- Aquí iría o filtro -->
             <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios -->
-            <field name="action_id" eval="ref('odoo_basico.informacion_list_action')"/><!-- Obtemos o id a partir do id externo-->
+            <field name="action_id"
+                   eval="ref('odoo_basico.informacion_list_action')"/><!-- Obtemos o id a partir do id externo-->
         </record>
 
     </data>
