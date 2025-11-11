@@ -10,7 +10,7 @@ class informacion(models.Model):
 
      name = fields.Char(string="Título:",size=20,required=True)
      descripcion = fields.Text(string="A Descripción:")
-     alto_en_cms = fields.Integer(string="Alto en cms:")
+     alto_en_cms = fields.Integer(string="Alto en cms :")
      ancho_en_cms = fields.Integer(string="Ancho en cms:")
      longo_en_cms = fields.Integer(string="Longo en cms:")
      volume = fields.Float(string="Volume m3:",digits=(6,2),store=True,compute="_volume")
