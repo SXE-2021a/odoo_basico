@@ -49,6 +49,7 @@
                             <page string="Datos Numéricos">
                                 <group>
                                     <group>
+                                        <field name="literal" readonly="1"/>
                                         <field name="alto_en_cms"/>
                                         <field name="ancho_en_cms"/>
                                         <field name="longo_en_cms"/>
