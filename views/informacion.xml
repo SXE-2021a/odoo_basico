@@ -1,12 +1,70 @@
 <odoo>
     <data>
+        <record model="ir.ui.view" id="informacion_graph_view_alto">
+            <field name="name">informacion.grafico</field>
+            <field name="model">odoo_basico.informacion</field>
+            <field name="arch" type="xml">
+                <graph string="alto" type="bar">
+                    <field name="alto_en_cms" type="row"/>
+                </graph>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="informacion_graph_view_ancho">
+            <field name="name">informacion.grafico</field>
+            <field name="model">odoo_basico.informacion</field>
+            <field name="arch" type="xml">
+                <graph string="ancho" type="bar">
+                    <field name="ancho_en_cms" type="row"/>
+                </graph>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="informacion_graph_view_longo">
+            <field name="name">informacion.grafico</field>
+            <field name="model">odoo_basico.informacion</field>
+            <field name="arch" type="xml">
+                <graph string="longo" type="bar">
+                    <field name="longo_en_cms" type="row"/>
+                </graph>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="informacion_pivot_view">
+            <field name="name">informacion.pivot</field>
+            <field name="model">odoo_basico.informacion</field>
+            <field name="arch" type="xml">
+                <pivot string="pivotando">
+                    <field name="alto_en_cms" type="row"/>
+                    <field name="sexo_traducido" type="col"/>
+                    <field name="densidade" type="measure"/>
+                    <field name="peso" type="measure"/>
+                    <field name="volume" type="measure"/>
+                </pivot>
+            </field>
+        </record>
         <record model="ir.actions.act_window" id="informacion_list_action">
             <field name="name">modulo odoo_basico, modelo informacion</field>
             <field name="res_model">odoo_basico.informacion</field>
-            <field name="view_mode">list,form,graph,pivot</field>
+            <field name="view_mode">list,form,pivot</field>
             <field name="help" type="html">
                 <p class="o_view_nocontent_smiling_face">Tes que crear o 1º Rexistro</p>
             </field>
+        </record>
+        <record model="ir.actions.act_window" id="informacion_graph_alto_action">
+            <field name="name">Gráfica Alto</field>
+            <field name="res_model">odoo_basico.informacion</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="informacion_graph_view_alto"/>
+        </record>
+        <record model="ir.actions.act_window" id="informacion_graph_ancho_action">
+            <field name="name">Gráfica Ancho</field>
+            <field name="res_model">odoo_basico.informacion</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="informacion_graph_view_ancho"/>
+        </record>
+        <record model="ir.actions.act_window" id="informacion_graph_longo_action">
+            <field name="name">Gráfica longo</field>
+            <field name="res_model">odoo_basico.informacion</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="informacion_graph_view_longo"/>
         </record>
 
         <record model="ir.ui.view" id="informacion_list_view">
@@ -82,28 +140,7 @@
                 </form>
             </field>
         </record>
-        <record model="ir.ui.view" id="informacion_graph_view">
-            <field name="name">informacion.grafico</field>
-            <field name="model">odoo_basico.informacion</field>
-            <field name="arch" type="xml">
-                <graph string="alto" type="bar">
-                    <field name="alto_en_cms" type="row"/>
-                </graph>
-            </field>
-        </record>
-        <record model="ir.ui.view" id="informacion_pivot_view">
-            <field name="name">informacion.pivot</field>
-            <field name="model">odoo_basico.informacion</field>
-            <field name="arch" type="xml">
-                <pivot string="pivotando">
-                    <field name="alto_en_cms" type="row"/>
-                    <field name="sexo_traducido" type="col"/>
-                    <field name="densidade" type="measure"/>
-                    <field name="peso" type="measure"/>
-                    <field name="volume" type="measure"/>
-                </pivot>
-            </field>
-        </record>
+
         <record model="ir.filters" id="filtro1">
             <field name="name">Filtro informacion 1</field>
             <field name="model_id">odoo_basico.informacion</field>
@@ -113,8 +150,9 @@
             <field name="sort">[]</field>
             <field name="domain">[]</field><!-- Aquí iría o filtro -->
             <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios -->
-            <field name="action_id"
-                   eval="ref('odoo_basico.informacion_list_action')"/><!-- Obtemos o id a partir do id externo-->
+            <field name="action_id"/><!-- Se queremos que o filtro se aplique a todas as accións do modelo, senon teríamos que usar a seguinte sintaxe:-->
+            <!--            <field name="action_id"-->
+            <!--                   eval="ref('odoo_basico.informacion_list_action')"/>&lt;!&ndash; Obtemos o id a partir do id externo&ndash;&gt;-->
         </record>
         <record model="ir.filters" id="filtro2">
             <field name="name">Filtro informacion 2</field>
@@ -127,8 +165,9 @@
                 '=','Rexistro 3' )]
             </field><!-- Aquí iría o filtro -->
             <field name="user_id"></field><!-- En blanco para que esté dispoñible para todos os usuarios -->
-            <field name="action_id"
-                   eval="ref('odoo_basico.informacion_list_action')"/><!-- Obtemos o id a partir do id externo-->
+            <field name="action_id"/><!-- Se queremos que o filtro se aplique a todas as accións do modelo, senon teríamos que usar a seguinte sintaxe:-->
+            <!--            <field name="action_id"-->
+            <!--                   eval="ref('odoo_basico.informacion_list_action')"/>&lt;!&ndash; Obtemos o id a partir do id externo&ndash;&gt;-->
         </record>
 
     </data>
