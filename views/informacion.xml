@@ -27,6 +27,15 @@
                 </graph>
             </field>
         </record>
+        <record model="ir.ui.view" id="informacion_graph_view_peso">
+            <field name="name">informacion.grafico</field>
+            <field name="model">odoo_basico.informacion</field>
+            <field name="arch" type="xml">
+                <graph string="longo" type="bar">
+                    <field name="peso" type="row"/>
+                </graph>
+            </field>
+        </record>
         <record model="ir.ui.view" id="informacion_pivot_view">
             <field name="name">informacion.pivot</field>
             <field name="model">odoo_basico.informacion</field>
@@ -66,6 +75,13 @@
             <field name="view_mode">graph</field>
             <field name="view_id" ref="informacion_graph_view_longo"/>
         </record>
+        <record model="ir.actions.act_window" id="informacion_graph_peso_action">
+            <field name="name">Gráfica peso en KG.s</field>
+            <field name="res_model">odoo_basico.informacion</field>
+            <field name="view_mode">graph</field>
+            <field name="view_id" ref="informacion_graph_view_peso"/>
+        </record>
+
 
         <record model="ir.ui.view" id="informacion_list_view">
             <field name="name">odoo_basico.list</field>

@@ -8,6 +8,7 @@
         <menuitem name="Menú Nivel 3. Gráfica Alto" id ="nivel3_grafica_alto" parent="nivel2_informacion_graficas" action="informacion_graph_alto_action"/>
         <menuitem name="Menú Nivel 3. Gráfica Ancho" id ="nivel3_grafica_ancho" parent="nivel2_informacion_graficas" action="informacion_graph_ancho_action"/>
         <menuitem name="Menú Nivel 3. Gráfica Longo" id ="nivel3_grafica_longo" parent="nivel2_informacion_graficas" action="informacion_graph_longo_action"/>
+        <menuitem name="Menú Nivel 3. Gráfica Peso" id ="nivel3_grafica_peso" parent="nivel2_informacion_graficas" action="informacion_graph_peso_action"/>
         <menuitem name="Menú Nivel 1. Suceso" id ="nivel1_suceso" parent="main_odoo_basico" action="suceso_list_action"/>
     </data>
 </odoo>
