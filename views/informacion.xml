@@ -27,12 +27,12 @@
                 </graph>
             </field>
         </record>
-        <record model="ir.ui.view" id="informacion_graph_view_peso">
+        <record model="ir.ui.view" id="informacion_graph_view_densidade">
             <field name="name">informacion.grafico</field>
             <field name="model">odoo_basico.informacion</field>
             <field name="arch" type="xml">
-                <graph string="longo" type="bar">
-                    <field name="peso" type="row"/>
+                <graph string="densidade" type="bar">
+                    <field name="densidade" type="row"/>
                 </graph>
             </field>
         </record>
@@ -75,11 +75,11 @@
             <field name="view_mode">graph</field>
             <field name="view_id" ref="informacion_graph_view_longo"/>
         </record>
-        <record model="ir.actions.act_window" id="informacion_graph_peso_action">
-            <field name="name">Gráfica peso en KG.s</field>
+        <record model="ir.actions.act_window" id="informacion_graph_densidade_action">
+            <field name="name">Gráfica Densidade</field>
             <field name="res_model">odoo_basico.informacion</field>
             <field name="view_mode">graph</field>
-            <field name="view_id" ref="informacion_graph_view_peso"/>
+            <field name="view_id" ref="informacion_graph_view_densidade"/>
         </record>
 
 
