@@ -95,6 +95,36 @@
         </t>
     </template>
 
+    <template id="report_foto_informacion_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <div class="page">
+                    <div class="container">
+                        <t t-foreach="docs" t-as="o">
+                            <t t-if="o.foto">
+                                <div style="page-break-after:always">
+                                    <div class="row bg-primary" style="margin: auto; width: 50%; padding: 15px;padding-left: 230px;">
+                                        <h3>Descripción</h3>
+                                    </div>
+                                    <div class="row" style="margin: auto; width: 50%; padding: 10px;">
+                                        <h5>
+                                            <span t-field="o.descripcion"/>
+                                        </h5>
+                                    </div>
+                                    <div class="row" style="margin: auto; width: 55%;">
+<!--                                        <img t-att-src="'data:image/png;base64,%s' % to_text(o.foto)"-->
+<!--                                             style="max-height: 500px;max-width: 500px;"/> Dende Odoo 16 non funciona-->
+                                        <img t-attf-src="data:image/*;base64,{{o.foto}} "  style="max-height: 500px;max-width: 500px;"/>
+                                    </div>
+                                </div>
+                            </t>
+                        </t>
+                    </div>
+                </div>
+            </t>
+        </t>
+    </template>
+
     <record id="report_1_odoo_basico_informacion" model="ir.actions.report">
         <field name="name">Listaxe 1 de Información</field>
         <field name="model">odoo_basico.informacion</field>
@@ -103,6 +133,18 @@
         <field name="report_file">odoo_basico.report_informacion_template</field>
         <!--        <field name="print_report_name">'Registration Event - %s' % (object.name or 'Attendee').replace('/','')</field>-->
         <field name="paperformat_id" ref="paperformat_euro_portrait"/>
+        <field name="binding_model_id" ref="model_odoo_basico_informacion"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_report_foto_informacion" model="ir.actions.report">
+        <field name="name">Listaxe das fotos en Información</field>
+        <field name="model">odoo_basico.informacion</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">odoo_basico.report_foto_informacion_template</field>
+        <field name="report_file">odoo_basico.report_foto_informacion_template</field>
+        <!--        <field name="print_report_name">'Registration Event - %s' % (object.name or 'Attendee').replace('/','')</field>-->
+        <field name="paperformat_id" ref="paperformat_euro_landscape"/>
         <field name="binding_model_id" ref="model_odoo_basico_informacion"/>
         <field name="binding_type">report</field>
     </record>

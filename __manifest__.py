@@ -27,6 +27,7 @@ Long description of module's purpose
         'views/menu.xml',
         'views/templates.xml',
         'reports/report_informacion.xml',
+        'reports/report_header.xml',
         'security/ir.model.access.csv',
     ],
     # only loaded in demonstration mode
