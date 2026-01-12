@@ -147,7 +147,20 @@
                                     </group>
                                 </group>
                             </page>
-                            <page string="Datos">
+                            <page string="Datos Moeda">
+                                <group>
+                                    <group>
+                                        <field name="moeda_id"/>
+                                        <field name="moeda_en_texto"/>
+                                        <field name="creador_da_moeda"/>
+                                    </group>
+                                    <group>
+                                        <field name="moeda_euro_id" invisible="1"/>
+                                        <field name="gasto_en_euros"/>
+                                        <field name="moeda_dolar_id" invisible="1"/>
+                                        <field name="gasto_en_dolares"/>
+                                    </group>
+                                </group>
                             </page>
                             <page string="Datos">
                             </page>
