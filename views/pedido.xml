@@ -12,14 +12,19 @@
         <field name="model">odoo_basico.pedido</field>
         <field name="arch" type="xml">
             <form string="Formulario de pedido">
+                <header>
+                    <button name="actualizadorSexo" type="object" string="Actualiza o campo Sexo do modelo información"/>
+                </header>
                 <sheet>
                     <group>
                         <field name="name"/>
+                        <field name="partner_id"/>
+                        <field name="fecha"/>
                         <separator string="Visualizar e engadir"/>
                         <field name="lineapedido_ids"/>
-<!--                        Se quixeramos que non se poideran editar as lineapedido:-->
-<!--                        <separator string="Só visualizar"/>-->
-<!--                        <field name="lineapedido_ids" readonly="1"/>-->
+                        <!--                        Se quixeramos que non se poideran editar as lineapedido:-->
+                        <!--                        <separator string="Só visualizar"/>-->
+                        <!--                        <field name="lineapedido_ids" readonly="1"/>-->
                     </group>
                 </sheet>
             </form>
@@ -31,6 +36,8 @@
         <field name="arch" type="xml">
             <list>
                 <field name="name"/>
+                <field name="partner_id"/>
+                <field name="fecha"/>
             </list>
         </field>
     </record>

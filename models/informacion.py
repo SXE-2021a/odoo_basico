@@ -30,6 +30,9 @@ class informacion(models.Model):
      # Se queremos que mostre tamén o "dolar" que ten position=before lle quitamos o filtro en domain
      moeda_id = fields.Many2one('res.currency', domain="[]", string="Moeda:")
      # con domain, filtramos os valores mostrados. Pode ser mediante unha constante (vai entre comillas) ou unha variable
+     # O campo currency_unit_label en versións anteriores era de tipo char, agora é de tipo json (para poder ter varias literais, en función do idioma),
+     # por iso quitamos store= true
+     #moeda_en_texto = fields.Char(related="moeda_id.currency_unit_label",string="Moeda en formato texto",store=True)
      moeda_en_texto = fields.Char(related="moeda_id.currency_unit_label",string="Moeda en formato texto")
      creador_da_moeda = fields.Char(related="moeda_id.create_uid.login",string="Usuario creador da moeda", store=True)
      moeda_euro_id = fields.Many2one('res.currency',
@@ -69,3 +72,7 @@ class informacion(models.Model):
         for rexistro in self:
             if rexistro.peso < 1 or rexistro.peso > 4:
                 raise ValidationError('Os peso de %s ten que ser entre 1 e 4 ' % rexistro.name)
+
+     def _cambia_campo_sexo(self, rexistro):
+         rexistro.sexo_traducido = "Hombre"
+

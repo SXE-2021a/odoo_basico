@@ -16,6 +16,7 @@
                     <group>
                         <field name="descripcionLineaPedido"/>
                         <field name="peso"/>
+                        <field name="informacion_ids"/>
                     </group>
                 </sheet>
             </form>
