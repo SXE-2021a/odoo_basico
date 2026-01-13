@@ -24,6 +24,8 @@ Long description of module's purpose
     'data': [
         'views/informacion.xml',
         'views/suceso.xml',
+        'views/pedido.xml',
+        'views/lineapedido.xml',
         'views/menu.xml',
         'views/templates.xml',
         'reports/report_informacion.xml',

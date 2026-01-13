@@ -10,5 +10,6 @@
         <menuitem name="Menú Nivel 3. Gráfica Longo" id ="nivel3_grafica_longo" parent="nivel2_informacion_graficas" action="informacion_graph_longo_action"/>
         <menuitem name="Menú Nivel 3. Gráfica Densidade" id ="nivel3_grafica_densidade" parent="nivel2_informacion_graficas" action="informacion_graph_densidade_action"/>
         <menuitem name="Menú Nivel 1. Suceso" id ="nivel1_suceso" parent="main_odoo_basico" action="suceso_list_action"/>
+        <menuitem name="Menú Nivel 1. Pedidos" id ="nivel1_pedido" parent="main_odoo_basico" action="pedido_list_action"/>
     </data>
 </odoo>
