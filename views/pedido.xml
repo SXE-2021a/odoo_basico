@@ -14,6 +14,8 @@
             <form string="Formulario de pedido">
                 <header>
                     <button name="actualizadorSexo" type="object" string="Actualiza o campo Sexo do modelo información"/>
+                    <button name="creaRexistroInformacion" type="object" string="Crear Rexistro no modelo Información"/>
+                    <button name="actualizaRexistroInformacion" type="object" string="Actualizar Rexistro no modelo Información"/>
                 </header>
                 <sheet>
                     <group>

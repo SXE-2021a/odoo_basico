@@ -76,3 +76,19 @@ class informacion(models.Model):
      def _cambia_campo_sexo(self, rexistro):
          rexistro.sexo_traducido = "Hombre"
 
+     def envio_email(self):
+         meu_usuario = self.env.user
+         # mail_de     Odoo pon o email que configuramos en gmail para facer o envio
+         mail_reply_to = meu_usuario.partner_id.email  # o enderezo email que ten asociado o noso usuario
+         mail_para = 'emaildedestino@servidordedestino.com'  # o enderezo email de destino
+         mail_valores = {
+             'subject': 'Aquí iría o asunto do email ',
+             'author_id': meu_usuario.id,
+             'email_from': mail_reply_to,
+             'email_to': mail_para,
+             'message_type': 'email',
+             'body_html': 'Aquí iría o corpo do email cos datos por exemplo de "%s" ' % self.descripcion,
+         }
+         mail_id = self.env['mail.mail'].create(mail_valores)
+         mail_id.sudo().send()
+         return True

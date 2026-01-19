@@ -108,6 +108,9 @@
             <field name="model">odoo_basico.informacion</field>
             <field name="arch" type="xml">
                 <form string="Formulario de información">
+                    <header>
+                        <button name="envio_email" type="object" string="Enviar Email"/>
+                    </header>
                     <sheet>
                         <group>
                             <field name="name"/>
