@@ -110,6 +110,7 @@
                 <form string="Formulario de información">
                     <header>
                         <button name="envio_email" type="object" string="Enviar Email"/>
+                        <button name="ver_contexto" type="object" string="Ver Contexto"/>
                     </header>
                     <sheet>
                         <group>

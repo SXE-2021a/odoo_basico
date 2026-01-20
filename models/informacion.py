@@ -2,6 +2,7 @@
 
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
+import os
 
 
 class informacion(models.Model):
@@ -91,4 +92,17 @@ class informacion(models.Model):
          }
          mail_id = self.env['mail.mail'].create(mail_valores)
          mail_id.sudo().send()
+         return True
+
+     def ver_contexto(self):  # Este metodo é chamado dende un botón de informacion.xml
+         for rexistro in self:
+             # Ao usar warning temos que importar a libreria mediante from odoo.exceptions import Warning
+             # Importamos tamén a libreria os mediante import os
+             # raise Warning('Contexto: %s Ruta: %s Contido do directorio %s' % (rexistro.env.context, os.getcwd(), os.listdir(os.getcwd())))
+
+             # Warning is deprecated por iso usamos ValidationError
+
+             raise ValidationError('Contexto: %s Ruta: %s Contido do directorio %s' % (
+                 rexistro.env.context, os.getcwd(), os.listdir(os.getcwd())))
+             # env.context é un diccionario  https://www.w3schools.com/python/python_dictionaries.asp
          return True
