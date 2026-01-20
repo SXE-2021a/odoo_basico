@@ -26,6 +26,7 @@ Long description of module's purpose
         'views/suceso.xml',
         'views/pedido.xml',
         'views/lineapedido.xml',
+        'views/persoa.xml',
         'views/menu.xml',
         'views/templates.xml',
         'reports/report_informacion.xml',
