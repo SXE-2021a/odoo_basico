@@ -30,3 +30,10 @@ class pedido(models.Model):
              informacion_id.name = "Actualizado ..."
              informacion_id.descripcion = "Actualizado dende o modelo pedido"
              informacion_id.sexo_traducido = "Mujer"
+
+     def actualizadorHoraTimezone(self):
+         # informacion_ids = self.env['odoo_basico.informacion'].search([])
+         # for rexistro in informacion_ids:
+         #     self.env['odoo_basico.informacion'].chamado_dende_pedido_e_dende_apidepends(rexistro)
+         informacion_ids = self.env['odoo_basico.informacion'].search([])
+         self.env['odoo_basico.informacion'].chamado_dende_pedido_e_dende_apidepends(informacion_ids)

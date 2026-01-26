@@ -98,6 +98,10 @@
                     <field name="densidade"/>
                     <field name="autorizado"/>
                     <field name="sexo_traducido"/>
+                    <field name="data"/>
+                    <field name="data_hora"/>
+                    <field name="hora_utc"/>
+                    <field name="hora_timezone_usuario"/>
                 </list>
             </field>
         </record>
@@ -111,6 +115,8 @@
                     <header>
                         <button name="envio_email" type="object" string="Enviar Email"/>
                         <button name="ver_contexto" type="object" string="Ver Contexto"/>
+                        <button name="actualiza_hora_timezone_usuario" type="object"
+                                string="Actualiza Hora a Timezone do Usuario" class="oe_highlight"/>
                     </header>
                     <sheet>
                         <group>
@@ -166,7 +172,13 @@
                                     </group>
                                 </group>
                             </page>
-                            <page string="Datos">
+                            <page string="Datas">
+                                <group>
+                                    <field name="data"/>
+                                    <field name="data_hora"/>
+                                    <field name="hora_utc"/>
+                                    <field name="hora_timezone_usuario"/>
+                                </group>
                             </page>
                         </notebook>
                     </sheet>
