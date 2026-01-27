@@ -31,7 +31,7 @@ class informacion(models.Model):
      data = fields.Date(string="Data", default=lambda self: fields.Date.today())
      data_hora = fields.Datetime(string="Data e Hora", default=lambda self: fields.Datetime.now())
      hora_utc = fields.Char(compute="_actualiza_hora_utc", string="Hora UTC", size=15, store=True)
-     hora_timezone_usuario = fields.Char(compute="actualiza_hora_timezone_usuario", string="Hora Timezone do Usuario",                   size=15, store=True)
+     hora_timezone_usuario = fields.Char(compute="actualiza_hora_timezone_usuario", string="Hora Timezone do Usuario",size=15, store=True)
      mes_castelan =fields.Char(compute="_mes_castelan",string="Mes en castelán",size=15,store=True)
      mes_galego = fields.Char(compute="_mes_galego", string="Mes en galego", size=15, store=True)
      mes_ingles = fields.Char(compute="_mes_ingles", string="Mes en ingles", size=15, store=True)
@@ -60,6 +60,15 @@ class informacion(models.Model):
      def _volume(self):
          for rexistro in self:
              rexistro.volume = (float(rexistro.alto_en_cms) * float(rexistro.ancho_en_cms) * float(rexistro.longo_en_cms)) /1000000
+             miñasUtilidades.rexistra_log(
+                 rexistro.convirte_data_hora_de_utc_a_timezone_do_usuario(fields.Datetime.now()).strftime(
+                     "%Y/%m/%d, %H:%M:%S"),
+                 miñasUtilidades.cadeaTextoSegunPlataforma('c:\\users\\antonio\\logs', '/home/antonio/logs'),
+                 "probaVolume.log",miñasUtilidades.determinaUsuarioSegunContexto(self, rexistro.env.context) + " novo volume " + str(rexistro.volume) + " en " + str(rexistro.descripcion))
+
+
+                 # miñasUtilidades.determinaUsuarioSegunContexto(self, rexistro.env.context) + " novo volume " + str(
+                 #     rexistro.volume))
 
      @api.depends('peso', 'volume')
      def _densidade(self):
