@@ -18,7 +18,7 @@ Long description of module's purpose
     'version': '0.1',
 
     # any module necessary for this one to work correctly
-    'depends': ['base','mail'],
+    'depends': ['base','mail','account'],
 
     # always loaded
     'data': [
@@ -29,6 +29,7 @@ Long description of module's purpose
         'views/persoa.xml',
         'views/menu.xml',
         'views/templates.xml',
+        'accions_planificadas/accion_planificada.xml',
         'reports/report_informacion.xml',
         'reports/report_header.xml',
         'security/ir.model.access.csv',
