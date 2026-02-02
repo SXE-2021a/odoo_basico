@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from odoo import models, fields, api
+from . import miñasUtilidades
 
 class accion_planificada (models.Model):
     #_inherit = "account.invoice" # Odoo Version 12
@@ -9,9 +10,13 @@ class accion_planificada (models.Model):
     @api.model
     def listado_facturas(self):
         usuario_que_executa_o_metodo_que_e_o_definido_no_xml = self.env.user  # usuario=__system que ten en res_partner name=OdooBot
-        self.env.user.tz = self.env['res.partner'].search([('id', '=', 3)])[0].tz  # como ten tz=UTC poñemoslle o tz do usuario=3 que é o administrador
-        agora = self.env['odoo_basico.informacion'].convirte_data_hora_de_utc_a_timezone_do_usuario(fields.Datetime.now())
-        self.env.user.tz = 'UTC' # deixamolo como estaba con tz=UTC
+        # self.env.user.tz = self.env['res.partner'].search([('id', '=', 3)])[0].tz  # como ten tz=UTC poñemoslle o tz do usuario=3 que é o administrador
+        # agora = self.env['odoo_basico.informacion'].convirte_data_hora_de_utc_a_timezone_do_usuario(fields.Datetime.now())
+        # self.env.user.tz = 'UTC' # deixamolo como estaba con tz=UTC
+        agora = miñasUtilidades.convirte_data_hora_de_utc_a_timezone_do_usuario(
+                    fields.Datetime.now(),
+                    self.env['res.partner'].search([('id', '=', 3)])[0].tz)
+
         #facturas_ids = self.search([('state', '=', 'open')]) Version Odoo 12
         facturas_ids = self.search([('state', '=', 'posted'),('move_type', '=', 'out_invoice')])
         if facturas_ids:

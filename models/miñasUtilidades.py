@@ -20,3 +20,7 @@ def determinaUsuarioSegunContexto(selfie,contexto):
     else:
         usuario = "Templates"
     return usuario
+def convirte_data_hora_de_utc_a_timezone_do_usuario(data_hora_utc_object, tzParaConvertir ):
+    import pytz
+    # recibe a data hora en formato object
+    return pytz.UTC.localize(data_hora_utc_object).astimezone(pytz.timezone(tzParaConvertir))  # hora co horario do usuario en formato object

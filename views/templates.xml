@@ -66,5 +66,16 @@
             <field name="ancho_en_cms">600</field>
             <field name="peso">6</field>
         </record>
+        <record model="odoo_basico.informacion" id="odoo_basico_informacion_7">
+            <field name="name">Rexistro 7</field>
+            <field name="descripcion">Descripción Rexistro 7</field>
+            <field name="autorizado">False</field>
+            <!--            <field name="data">2020-60-60</field>-->
+            <field name="sexo_traducido">Mujer</field>
+            <field name="alto_en_cms">700</field>
+            <field name="longo_en_cms">700</field>
+            <field name="ancho_en_cms">700</field>
+            <field name="peso">7</field>
+        </record>
     </data>
 </odoo>

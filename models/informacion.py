@@ -3,7 +3,7 @@
 from odoo import models, fields, api
 from odoo.exceptions import ValidationError
 import os
-import pytz
+# import pytz
 import locale
 from . import miñasUtilidades
 
@@ -61,12 +61,9 @@ class informacion(models.Model):
          for rexistro in self:
              rexistro.volume = (float(rexistro.alto_en_cms) * float(rexistro.ancho_en_cms) * float(rexistro.longo_en_cms)) /1000000
              miñasUtilidades.rexistra_log(
-                 rexistro.convirte_data_hora_de_utc_a_timezone_do_usuario(fields.Datetime.now()).strftime(
-                     "%Y/%m/%d, %H:%M:%S"),
+                 miñasUtilidades.convirte_data_hora_de_utc_a_timezone_do_usuario(fields.Datetime.now(), self.env.user.tz or 'UTC').strftime("%Y/%m/%d, %H:%M:%S"),
                  miñasUtilidades.cadeaTextoSegunPlataforma('c:\\users\\antonio\\logs', '/home/antonio/logs'),
                  "probaVolume.log",miñasUtilidades.determinaUsuarioSegunContexto(self, rexistro.env.context) + " novo volume " + str(rexistro.volume) + " en " + str(rexistro.descripcion))
-
-
                  # miñasUtilidades.determinaUsuarioSegunContexto(self, rexistro.env.context) + " novo volume " + str(
                  #     rexistro.volume))
 
@@ -137,17 +134,18 @@ class informacion(models.Model):
          for rexistro in self:
              rexistro.chamado_dende_pedido_e_dende_apidepends(rexistro)  # leva rexistro como parametro por que chamado_dende_pedido_e_dende_apidepends ten 2 parametros
 
-     def convirte_data_hora_de_utc_a_timezone_do_usuario(self, data_hora_utc_object):  # recibe a data hora en formato object
-         usuario_timezone = pytz.timezone(self.env.user.tz or 'UTC')  # obter a zona horaria do usuario. Ollo!!! nas preferencias do usuario ten que estar ben configurada a zona horaria
-         return pytz.UTC.localize(data_hora_utc_object).astimezone(usuario_timezone)  # hora co horario do usuario en formato object
-         # para usar  pytz temos que facer  import pytz
-
+# Movido a miñasutilidades
+#      def convirte_data_hora_de_utc_a_timezone_do_usuario(self, data_hora_utc_object):  # recibe a data hora en formato object
+#          usuario_timezone = pytz.timezone(self.env.user.tz or 'UTC')  # obter a zona horaria do usuario. Ollo!!! nas preferencias do usuario ten que estar ben configurada a zona horaria
+#          return pytz.UTC.localize(data_hora_utc_object).astimezone(usuario_timezone)  # hora co horario do usuario en formato object
+#          # para usar  pytz temos que facer  import pytz
+######
      def chamado_dende_pedido_e_dende_apidepends(self, parametro_cos_datos_a_actualizar):  # Ten 2 parametros xa que polo segundo recibe os rexistros que queremos actualizar dende pedido
          # TypeError: informacion.actualiza_hora_timezone_usuario() takes 1 positional argument but 2 were given
          #     parametro_cos_datos_a_actualizar.hora_timezone_usuario = self.convirte_data_hora_de_utc_a_timezone_do_usuario(parametro_cos_datos_a_actualizar.data_hora).strftime("%H:%M:%S")  # Convertimos a hora de UTC a hora do timezone do usuario
          for rexistro in parametro_cos_datos_a_actualizar:
-             rexistro.hora_timezone_usuario = rexistro.convirte_data_hora_de_utc_a_timezone_do_usuario(
-                 rexistro.data_hora).strftime("%H:%M:%S")  # Convertimos a hora de UTC a hora do timezone do usuario
+             rexistro.hora_timezone_usuario = miñasUtilidades.convirte_data_hora_de_utc_a_timezone_do_usuario(
+                 rexistro.data_hora, self.env.user.tz or 'UTC').strftime("%H:%M:%S")  # Convertimos a hora de UTC a hora do timezone do usuario
 
      @api.depends('data')
      def _mes_castelan(self):
