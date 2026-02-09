@@ -1,6 +1,5 @@
 id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-odoo_basico_informacion_lectura,odoo_basico.informacion.lectura,model_odoo_basico_informacion,odoo_basico.grupo_lectura,1,0,0,0
-odoo_basico_informacion_escritura,odoo_basico.informacion.escritura,model_odoo_basico_informacion,odoo_basico.grupo_escritura,1,1,1,1
+odoo_basico_informacion,odoo_basico.informacion,model_odoo_basico_informacion,base.group_user,1,1,1,1
 odoo_basico_suceso,odoo_basico.suceso,model_odoo_basico_suceso,base.group_user,1,1,1,1
 odoo_basico_pedido,odoo_basico.pedido,model_odoo_basico_pedido,base.group_user,1,1,1,1
 odoo_basico_lineapedido,odoo_basico.lineapedido,model_odoo_basico_lineapedido,base.group_user,1,1,1,1

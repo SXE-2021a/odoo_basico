@@ -1,0 +1,55 @@
+<odoo>
+    <data>
+        <record model="ir.module.category" id="Grupos_para_odoo_basico"> <!-- id externo para identificar o rexistro -->
+            <field name="name">Xestión de odoo_basico. Grupo:
+            </field><!-- Se visualiza na pantalla de usuario para escoller o grupo e é o nome para a categoría-->
+            <field name="description">Xestión de odoo basico</field>
+            <field name="sequence">2</field>
+        </record>
+
+        <record model="res.groups" id="grupo_lectura"> <!-- id externo para identificar o rexistro -->
+            <field name="name">Grupo Lectura</field> <!-- Nome para o  grupo de usuarios que se garda en res_groups-->
+            <field name="category_id" ref="Grupos_para_odoo_basico"/><!-- Se relaciona a través do id_externo coa categoría creada previamente-->
+            <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/> <!-- many2many https://useopenerp.com/v8/model/res-users -->
+            <field name="users" eval="[(4, ref('base.user_root'))]"/> <!-- https://odoo-development.readthedocs.io/en/latest/dev/py/x2many.html -->
+        </record>
+
+        <record model="res.groups" id="grupo_escritura"> <!-- id externo para identificar o rexistro -->
+            <field name="name">Grupo Escritura</field> <!-- Nome para o  grupo de usuarios que se garda en res_groups-->
+            <field name="category_id" ref="Grupos_para_odoo_basico"/><!-- Se relaciona a través do id_externo coa categoría creada previamente-->
+            <field name="implied_ids" eval="[(4, ref('odoo_basico.grupo_lectura'))]"/> <!-- many2many https://useopenerp.com/v8/model/res-users -->
+        </record>
+
+        <record model="res.users" id="usuario_lectura">
+            <field name="name">Nome Lectura</field>
+            <field name="apelidos">Apelidos Lectura</field>
+            <field name="visible">true</field>
+            <field name="display_name">Nome Lectura Apelidos Lectura</field>
+            <field name="email">Nome_Lectura@iesteis.com</field>
+            <field name="active">true</field>
+            <field name="company_id">1</field>
+            <field name="lang">es_ES</field>
+            <field name="tz">Europe/Madrid</field>
+            <field name="login">lectura@odoo.com</field>
+            <field name="password">odoo</field>
+            <field name="groups_id" eval="[(6, 0, [ref('odoo_basico.grupo_lectura')])]"/>
+        </record>
+        <!--    Se da erro por violar a constraint notification_type con valor null. -->
+        <!--    Temos que desinstalar e instalar o módulo para que tome por defecto o valor email, ou asignarlle un valor a email -->
+
+        <record model="res.users" id="usuario_escritura">
+            <field name="name">Nome Escritura</field>
+            <field name="apelidos">Apelidos Escritura</field>
+            <field name="visible">true</field>
+            <field name="display_name">Nome Escritura Apelidos Escritura</field>
+            <field name="email">Nome_escritura@iesteis.com</field>
+            <field name="active">true</field>
+            <field name="company_id">1</field>
+            <field name="lang">es_ES</field>
+            <field name="tz">Europe/Madrid</field>
+            <field name="login">escritura@odoo.com</field>
+            <field name="password">odoo</field>
+            <field name="groups_id" eval="[(6, 0, [ref('odoo_basico.grupo_escritura')])]"/>
+        </record>
+    </data>
+</odoo>
